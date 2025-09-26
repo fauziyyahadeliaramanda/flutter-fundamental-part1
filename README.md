@@ -1,5 +1,5 @@
-# Project Hello World
+# Hasil Screenshot
 
-Berikut hasil screenshot aplikasi Flutter:
+Berikut adalah hasil tampilan aplikasi Flutter setelah mengganti text widget:
 
-![Screenshot](images/01.png)
+![Hasil Screenshot](images/02.png)
