@@ -1,5 +1,5 @@
 # Hasil Screenshot
 
-Berikut adalah hasil tampilan aplikasi Flutter setelah mengganti text widget:
+Berikut adalah hasil tampilan aplikasi Flutter setelah menambahkan image widget:
 
-![Hasil Screenshot](images/02.png)
+![Hasil Screenshot](images/03.png)
