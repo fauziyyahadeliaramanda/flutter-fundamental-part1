@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false, // hilangkan banner debug
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: MyLayout(),
       ),
@@ -26,20 +26,31 @@ class MyLayout extends StatelessWidget {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ElevatedButton(
-          child: const Text('Show Alert'),
-          onPressed: () {
-            showAlertDialog(context);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: const Text('Show AlertDialog'),
+              onPressed: () {
+                showAlertDialog(context);
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              child: const Text('Show SimpleDialog'),
+              onPressed: () {
+                showSimpleDialog(context);
+              },
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-// Fungsi untuk menampilkan AlertDialog
+// AlertDialog
 showAlertDialog(BuildContext context) {
-  // set up the button
   Widget okButton = TextButton(
     child: const Text("OK"),
     onPressed: () {
@@ -47,7 +58,6 @@ showAlertDialog(BuildContext context) {
     },
   );
 
-  // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("My Title"),
     content: const Text("This is my message."),
@@ -56,11 +66,42 @@ showAlertDialog(BuildContext context) {
     ],
   );
 
-  // show the dialog
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return alert;
+    },
+  );
+}
+
+// SimpleDialog
+showSimpleDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return SimpleDialog(
+        title: const Text("Choose an option"),
+        children: <Widget>[
+          SimpleDialogOption(
+            onPressed: () {
+              Navigator.pop(context, "Option 1");
+            },
+            child: const Text("Option 1"),
+          ),
+          SimpleDialogOption(
+            onPressed: () {
+              Navigator.pop(context, "Option 2");
+            },
+            child: const Text("Option 2"),
+          ),
+          SimpleDialogOption(
+            onPressed: () {
+              Navigator.pop(context, "Option 3");
+            },
+            child: const Text("Option 3"),
+          ),
+        ],
+      );
     },
   );
 }
