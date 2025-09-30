@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class FabWidget extends StatelessWidget {
+  const FabWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Hilangkan banner debug
+      debugShowCheckedModeBanner: false, // biar lebih clean
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Contoh FloatingActionButton"),
           centerTitle: true,
-          backgroundColor: Colors.blue, // warna biru di header
         ),
         body: const Center(
           child: Text("Tekan tombol FAB di kanan bawah"),
@@ -25,7 +20,7 @@ class MyApp extends StatelessWidget {
             // Aksi ketika FAB ditekan
             debugPrint("FAB ditekan!");
           },
-          backgroundColor: Colors.blue, // warna FAB biru juga
+          backgroundColor: Colors.pink,
           child: const Icon(Icons.thumb_up),
         ),
       ),
