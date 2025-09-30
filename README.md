@@ -1,4 +1,4 @@
 # Hasil Screenshot
 
-Berikut adalah hasil tampilan aplikasi Flutter setelah menambahkan Dialog Widget (SimpleDialog)
-![Hasil Screenshot](images/07.png)
+Berikut adalah hasil tampilan aplikasi Flutter setelah menambahkan Input dan Selection Widget
+![Hasil Screenshot](images/08.png)
